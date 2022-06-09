@@ -1,19 +1,11 @@
 # meet
-<<<<<<< HEAD
-
-=======
->>>>>>> 7fcc13304ffb60109478cfd825bd44ecde9dfea5
 To build a serverless, progressive web application (PWA) with React using a
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
 
 ##FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
 
-<<<<<<< HEAD
 \_"As a user, i should be able to hide and expand the events list so that I could see less or more details I want to."
-=======
-_"As a user, i should be able to hide and expand the events list so that I could see less or more details I want to."
->>>>>>> 7fcc13304ffb60109478cfd825bd44ecde9dfea5
 
 -Scenario 1: An event element is collapsed by default.
 -Given user is on the home page
