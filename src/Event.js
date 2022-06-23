@@ -11,7 +11,7 @@ class Event extends Component {
         });
       };
 
-      dateNewFormat = (eventDate) => {
+      dateFormat = (eventDate) => {
         const newDate = `${new Date(eventDate)}`;
         return newDate;
       };
@@ -20,9 +20,35 @@ class Event extends Component {
     const { event } = this.props;
     const { collapsed } = this.state;
     
-    return <div className="Event">
+    return <div className="event">
+           <h2 className="summary">{event.summary}</h2>
+           <p className="event-date">{this.dateFormat(event.start.dateTime)}</p>
+           <p className="location">
+           {event.location}
+           </p>
 
-    </div>;
+           <button
+           className={`details-button ${collapsed ? "show" : "hide"}-details`}
+           onClick={this.handleClick}> 
+           {collapsed ? "Show Details" : "Hide Details"}
+        </button>
+
+        {!collapsed && (
+          <div
+            className={`extra-details ${
+              this.state.collapsed ? "hide" : "show"
+            }`}
+          >
+            <h3>Check the event:</h3>
+            <a href={event.htmlLink} rel="noreferrer" target="_blank">
+              Details on Google Calendar
+            </a>
+            <p className="event-description">{event.description}</p>
+          </div>
+        )}
+       </div>;
+          
+
   }
 }
 export default Event;

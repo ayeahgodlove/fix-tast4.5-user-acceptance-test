@@ -1,52 +1,29 @@
-// import React, { Component } from 'react';
-//
+import React, { Component } from 'react';
 
 
+class NumberOfEvents extends Component {
+    state = {
+        numberOfEvents: 32,
+      }
 
-// class CitySearch extends Component {
-//     state = {
-//         numberOfEvents: 32,
-//       }
-
-//  handleInputChanged = (event) => {
-//         const value = event.target.value;
-//         const suggestions = this.props.locations.filter((location) => {
-//             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
-//           });
-//           this.setState({
-//             query: value,
-//             suggestions,
-//           });
-//         };
-
-// handleItemClicked = (suggestion) => {
-//       this.setState({
-//       query: suggestion
-//     });
-//    }          
+handleItemClicked = () => {
+      this.setState({
+      numberOfEvents: 32,
+    });
+   }          
     
-//   render() {
-//     return (
-//         <div className="NumberOfEvents">
-//          <input
-//           type="text"
-//           className="city"
-//           value={this.state.query}
-//           onChange={this.handleInputChanged}
-//          />
-//          <ul className="suggestions">
-//          {this.state.suggestions.map((suggestion) => (
-//          <li key={suggestion}
-//          onClick={() => this.handleItemClicked(suggestion)}
-//          >{suggestion}</li>
-//           ))}
-//            <li>
-//             <b>See all the events</b>
-//          </li>
-//        </ul>
-//      </div>
-//     );
-//   }
-// }
+  render() {
+    return (
+        <div className="NumberOfEvents">
+         <h3>Number of events to display</h3>
+         <input
+          className='number-of-events'
+          type="number"
+          value={this.props.numberOfEvents}
+         onClick={() => this.handleItemClicked()}/>
+         </div>
+    );
+   }
+  }
 
-// export default NumberOfEvents;
+export default NumberOfEvents;
