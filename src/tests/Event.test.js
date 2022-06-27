@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { mockData } from '../mock-data';
 import Event from '../Event';
 import { shallow } from 'enzyme';
@@ -16,6 +16,10 @@ describe('<Event /> component', () => {
 
   test('render event summary', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(1);
+  });
+
+  test('render event start-time', () => {
+    expect(EventWrapper.find('.start-time')).toHaveLength(1);
   });
 
   test('render event location', () => {

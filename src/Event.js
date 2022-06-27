@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+
+
 class Event extends Component {
     state = {
         collapsed: true,
@@ -11,7 +13,7 @@ class Event extends Component {
         });
       };
 
-      dateFormat = (eventDate) => {
+      dateNewFormat = (eventDate) => {
         const newDate = `${new Date(eventDate)}`;
         return newDate;
       };
@@ -22,10 +24,8 @@ class Event extends Component {
     
     return <div className="event">
            <h2 className="summary">{event.summary}</h2>
-           <p className="event-date">{this.dateFormat(event.start.dateTime)}</p>
-           <p className="location">
-           {event.location}
-           </p>
+           <p className="start-time">{this.dateNewFormat(event.start.dateTime)}</p>
+           <p className="location">{event.location} </p>
 
            <button
            className={`details-button ${collapsed ? "show" : "hide"}-details`}
