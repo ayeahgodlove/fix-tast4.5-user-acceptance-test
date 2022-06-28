@@ -24,7 +24,7 @@ class Event extends Component {
     
     return <div className="event">
            <h2 className="summary">{event.summary}</h2>
-           <p className="start-time">{this.dateNewFormat(event.start.dateTime)}</p>
+           {/* <p className="start-time">{this.dateNewFormat(event.start.dateTime)}</p> */}
            <p className="location">{event.location} </p>
 
            <button

@@ -18,9 +18,9 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(1);
   });
 
-  test('render event start-time', () => {
-    expect(EventWrapper.find('.start-time')).toHaveLength(1);
-  });
+  // test('render event start-time', () => {
+  //   expect(EventWrapper.find('.start-time')).toHaveLength(1);
+  // });
 
   test('render event location', () => {
     expect(EventWrapper.find('.location')).toHaveLength(1);
