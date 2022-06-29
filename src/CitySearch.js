@@ -5,8 +5,9 @@ import React, { Component } from 'react';
 class CitySearch extends Component {
     state = {
         query: '',
-        suggestions: []
-      }
+        suggestions: [],
+        showSuggestions: false
+      };
 
  handleInputChanged = (event) => {
         const value = event.target.value;
@@ -23,11 +24,13 @@ class CitySearch extends Component {
 handleItemClicked = (suggestion) => {
       this.setState({
       query: suggestion,
+      suggestions: [],
       showSuggestions: false
     });
     this.props.updateEvents(suggestion);
    }          
-    
+
+  
   render() {
     return (
         <div className="CitySearch">

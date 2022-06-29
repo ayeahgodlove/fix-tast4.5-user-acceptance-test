@@ -1,3 +1,5 @@
+
+
 const mockData = [
 
     {
@@ -81,4 +83,5 @@ const mockData = [
 
 ];
 
+// mockData = JSON.parse(JSON.stringify(mockData));
 export { mockData };

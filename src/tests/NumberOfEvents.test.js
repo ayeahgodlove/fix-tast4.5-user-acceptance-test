@@ -17,5 +17,10 @@ test('render number of events', () => {
     const numberOfEvents = NumberOfEventsWrapper.prop('numberOfEvents');
     expect(NumberOfEventsWrapper.find('.number-of-events').prop('value')).toBe(numberOfEvents);
   });
-  
+
+  test('changes the selected event number', () => {
+    NumberOfEventsWrapper.setState({ numberOfEvents: 32 });
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(32);
+});
+   
 });

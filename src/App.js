@@ -10,7 +10,9 @@ import { getEvents, extractLocations  } from './api';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    numberOfEvents: 32
+    ,
   }
 
   componentDidMount() {
@@ -24,13 +26,22 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location) => {
+  updateNumberOfEvents = (numberOfEvents) => {
+    this.setState({
+      numberOfEvents,
+    });
+
+    this.updateEvents(this.state.locations, numberOfEvents);
+  };
+
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
       events :
       events.filter((event) => event.location === location);
       this.setState({
-        events: locationEvents
+        events: locationEvents.slice(0, this.state.numberOfEvents),
+        numberOfEvents: eventCount,
       });
     });
   }
@@ -43,7 +54,10 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
         <EventList events={this.state.events}/>
         <Event event/>
-        <NumberOfEvents />
+        <NumberOfEvents
+          numberOfEvents={this.state.numberOfEvents}
+          updateNumberOfEvents={this.updateNumberOfEvents}
+        />
       </div>
     );
   }
