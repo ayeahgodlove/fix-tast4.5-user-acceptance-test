@@ -3,17 +3,17 @@ import Event from './Event';
 
 class EventList extends Component {
   render() {
-    const { events } = this.props;
+    const { events, numberOfEvents } = this.props;
     return (
       <div>
         <ul className="EventList">
-        {events.map(event =>
+        {events.map((event =>
         <li key={event.id}>
           <Event event={event} />
         </li>
-      )}
-    </ul>
-      </div>
+        ))}
+      </ul>
+    </div>
     );
   }
 }

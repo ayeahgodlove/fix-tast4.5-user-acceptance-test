@@ -71,6 +71,7 @@
      const url = 'https://ifn1x0lzg2.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
      const result = await axios.get(url);
      if (result.data) {
+      console.log("hello: ", result)
        var locations = extractLocations(result.data.events);
        localStorage.setItem("lastEvents", JSON.stringify(result.data));
        localStorage.setItem("locations", JSON.stringify(locations));

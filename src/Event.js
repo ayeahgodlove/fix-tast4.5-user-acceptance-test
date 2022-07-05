@@ -14,7 +14,7 @@ class Event extends Component {
       };
 
       dateNewFormat = (eventDate) => {
-        const newDate = `${new Date(eventDate)}`;
+        const newDate = new Date(eventDate).toDateString();
         return newDate;
       };
 
@@ -22,14 +22,16 @@ class Event extends Component {
     const { event } = this.props;
     const { collapsed } = this.state;
     
-    return <div className="event">
+    return (
+    <div className="event">
            <h2 className="summary">{event.summary}</h2>
-           {/* <p className="start-time">{this.dateNewFormat(event.start.dateTime)}</p> */}
+           <p className="start-time">{this.dateNewFormat(event.start.dateTime)}</p>
            <p className="location">{event.location} </p>
 
            <button
            className={`details-button ${collapsed ? "show" : "hide"}-details`}
            onClick={this.handleClick}> 
+
            {collapsed ? "Show Details" : "Hide Details"}
         </button>
 
@@ -46,9 +48,8 @@ class Event extends Component {
             <p className="event-description">{event.description}</p>
           </div>
         )}
-       </div>;
-          
-
+       </div>
+       );     
+    }
   }
-}
 export default Event;
