@@ -57,7 +57,7 @@ defineFeature(feature, test => {
         });
 
         when('user exits the event details', () => {
-          AppWrapper.find('.event__details-button').at(0).simulate('click');
+          AppWrapper.find('.event__details-button').at(0).simulate('click'); 
 
         });
 
