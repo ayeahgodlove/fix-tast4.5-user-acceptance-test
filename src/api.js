@@ -14,6 +14,7 @@
 
 
  export const extractLocations = (events) => {
+    console.log("extract", events)
     var extractLocations = events.map((event) => event.location);
     var locations = [...new Set(extractLocations)];
     return locations;
@@ -68,7 +69,7 @@
 
    if (token) {
      removeQuery();
-     const url = 'https://ifn1x0lzg2.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+     const url = 'https://ifn1x0lzg2.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
      const result = await axios.get(url);
      if (result.data) {
       console.log("hello: ", result)

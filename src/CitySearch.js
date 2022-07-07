@@ -10,18 +10,22 @@ class CitySearch extends Component {
       };
 
  handleInputChanged = (event) => {
+  console.log("Handle input")
         const value = event.target.value;
         const suggestions = this.props.locations.filter((location) => {
+            console.log("loc", location)
             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
           });
+          console.log(suggestions)
           this.setState({
             query: value,
             suggestions,
-            showSuggestions: undefined
+            showSuggestions: true
           });
         };
 
 handleItemClicked = (suggestion) => {
+  console.log("Handle item")
       this.setState({
       query: suggestion,
       suggestions: [],
